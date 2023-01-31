@@ -23,7 +23,7 @@
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.1);
-  -switch-bg-url: url(./assets/moon-stars.svg);
+  --switch-bg-url: url(./assets/sun.svg);
 }
 
 body {
@@ -42,7 +42,6 @@ body * {
   font-family: 'Inter', sans-serif;
   color: var(--text-color);
 }
-
 
 #container {
   width: 100%;
@@ -87,12 +86,17 @@ body * {
   left: 0;
   z-index: 1; /*subiu um andar na sobreposição*/
   transform: translateY(-50%); /*movimentar a img no eixo */
+
+  animation: slide-out 0.2s;
 }
 
 /*trocar o ligth pelo dark mode*/
 .light #switch button {
-  right: 0;
-  left: initial; /*volta pr sua maneira inicial*/
+  animation: slide-in 0.4s forwards; /* animation: name time manter as propriedades*/
+}
+
+#switch button:hover{
+  outline: 8px solid var(--highlight-color);
 }
 
 #switch span {
@@ -163,12 +167,31 @@ footer {
 }
 
 /*media queries (para todos os dipositivos)*/
-@media (min-wdth: 700px){
-  :root{
+@media (min-wdth: 700px) {
+  :root {
     --bg-url: url(./assets/bg-desktop.jpg);
   }
 
-  .light{
+  .light {
     --bg--url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/*animation*/
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
