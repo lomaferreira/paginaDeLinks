@@ -27,13 +27,6 @@
 }
 
 body {
-  /*
-    background-image:url(./assets/bg-mobile.jpg);
-    background-repeat: no-repeat;
-    background-position: top center;
-    background-size: cover;
-*/
-  /*background: color image repeat position/size*/
   background: var(--bg-url) no-repeat top center/cover;
   height: 100vh; /*vh é viewport height, que é a altura das telas*/
 }
@@ -81,11 +74,11 @@ body * {
   border: 0;
   border-radius: 50%;
 
-  position: absolute; /*sobreposição de camadas*/
+  position: absolute; 
   top: 50%;
   left: 0;
-  z-index: 1; /*subiu um andar na sobreposição*/
-  transform: translateY(-50%); /*movimentar a img no eixo */
+  z-index: 1; 
+  transform: translateY(-50%); 
 
   animation: slide-out 0.2s;
 }
@@ -94,6 +87,7 @@ body * {
 .light #switch button {
   animation: slide-in 0.4s forwards; /* animation: name time manter as propriedades*/
 }
+
 
 #switch button:hover{
   outline: 8px solid var(--highlight-color);
@@ -112,26 +106,28 @@ body * {
 
 /*links*/
 ul {
-  list-style: none; /*tirar o estilo da lista, como os pontinhos*/
-  display: flex; /*ajuste flexivel*/
-  flex-direction: column; /*forma de coluna*/
+  list-style: none; 
+  display: flex; 
+  flex-direction: column; 
   gap: 16px;
   padding: 24px 0;
 }
 ul li a {
   display: flex;
-  justify-content: center; /*colocar o <a> no centro*/
-  align-items: center; /*colocar no centro da caixa*/
+  justify-content: center; 
+  align-items: center; 
   padding: 16px 24px;
   background: var(--surface-color);
   border: 1px solid var(--stroke-color);
-  border-radius: 8px; /*arrendodamento da borda*/
+  border-radius: 8px; 
   backdrop-filter: blur(4px); /*leve embaçado*/
   -webkit-backdrop-filter: blur(4px);
-  text-decoration: none; /*tirar a linha do <a>*/
+  text-decoration: none; 
   font-weight: 500;
-  transition: background 0.2s; /*torna o hover mais suave*/
+  transition: background 0.2s; 
 }
+
+
 /*pseudo-selector*/
 ul li a:hover {
   background: var(--surface-color-hover);
